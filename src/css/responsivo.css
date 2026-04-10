@@ -1,58 +1,79 @@
 @media (max-width: 750px) {
+
+    /* BASE */
     body {
-        font-size: 12px;
+        font-size: 14px; /* 12px fica pequeno demais */
     }
 
+    /* LAYOUT */
     .pokedex {
         flex-direction: column;
-        padding: 30px 0;
+        align-items: center;
+        padding: 20px 10px;
+        gap: 20px;
     }
 
+    /* CARD */
     .cartao-pokemon {
-        max-width: 300px;
+        max-width: 320px;
+        width: 100%;
     }
 
-    .cartao-pokemon .cartao-imagem {
-        width: 200px;
-        height: 200px;
+    .cartao-imagem {
+        max-width: 200px;
+        width: 100%;
+        margin: 0 auto;
     }
 
-    .cartao-pokemon .cartao-informacoes {
-        padding: 60px 30px 30px;
-        margin-top: -50px;
+    .cartao-imagem img {
+        width: 100%;
+        height: auto;
     }
 
-    .cartao-pokemon .cartao-informacoes .informacoes {
-        display: flex;
-        justify-content: space-between;
-        padding: 0;
+    .cartao-informacoes {
+        padding: 50px 20px 25px;
+        margin-top: -40px;
+        flex-direction: column;
+        gap: 15px;
     }
 
-    .cartao-pokemon .cartao-informacoes h3 {
+    .cartao-informacoes h3 {
         font-size: 16px;
     }
 
+    /* REMOVE CLASSE INEXISTENTE (corrigido) */
+    /* .informacoes não existe no seu HTML */
+
+    /* LISTAGEM */
     .listagem {
-        max-width: 300px;
+        max-width: 320px;
+        width: 100%;
     }
 
     .listagem ul {
         display: flex;
-        gap: 8px;
+        gap: 10px;
         flex-wrap: wrap;
-        justify-content: space-between;
+        justify-content: center;
     }
 
     .listagem .pokemon {
         width: 140px;
-        border-top-left-radius: 0;
-        border-bottom-left-radius: 0;
+        border-radius: 10px;
         margin-bottom: 0;
-        border-radius: 8px;
+        justify-content: flex-start;
+        gap: 8px;
+        padding: 8px;
+    }
+
+    .listagem .pokemon img {
+        width: 35px;
+        height: 35px;
     }
 
     .listagem .pokemon span {
-        padding-right: 5px;
+        padding: 0;
+        text-align: left;
+        font-size: 13px;
     }
-
 }

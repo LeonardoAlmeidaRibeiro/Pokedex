@@ -1,21 +1,67 @@
-body{
-    font-family: 'Poppins', sans-serif;
+/* VARIÁVEIS GLOBAIS */
+:root {
+    --fonte-padrao: 'Poppins', sans-serif;
+    --cor-fundo: #dadfe8;
 }
 
-main{
-    min-width: 100vh;
+/* RESET BÁSICO GLOBAL */
+body {
+    font-family: var(--fonte-padrao);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* GARANTE BOX-SIZING GLOBAL */
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+/* MAIN */
+main {
+    min-height: 100vh; /* corrigido (era min-width) */
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #dadfe8;
+    background-color: var(--cor-fundo);
+    padding: 20px;
 }
-.pokedex{
+
+/* CONTAINER POKEDEX */
+.pokedex {
     display: flex;
     gap: 30px;
     padding: 30px 0;
+    flex-wrap: wrap; /* melhora responsividade */
+    justify-content: center;
 }
+
+/* LISTA COM SCROLL */
 .containerpk {
-    height: 700px;
-    overflow-y: scroll;
+    max-height: 700px; /* melhor que height fixo */
+    overflow-y: auto;
     overflow-x: hidden;
-  }
+    padding-right: 10px; /* evita cortar conteúdo com scrollbar */
+}
+
+/* SCROLLBAR CUSTOM (opcional, mais bonito) */
+.containerpk::-webkit-scrollbar {
+    width: 6px;
+}
+
+.containerpk::-webkit-scrollbar-thumb {
+    background-color: #bbb;
+    border-radius: 10px;
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+    .pokedex {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .containerpk {
+        max-height: 400px;
+    }
+}
